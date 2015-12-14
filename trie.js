@@ -1,5 +1,5 @@
 function Trie (){
-  this.characters = {};
+
 }
 
 Trie.prototype.learn = function(word, index){
