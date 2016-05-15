@@ -17,7 +17,7 @@ describe("Trie", function() {
         t.learn("be");
         var b = t.characters.b;
         expect(b).to.exist;
-        expect(b.isWord).to.be.false;
+        expect(b.isWord).to.not.exist;
         var e = b.characters.e;
         expect(e).to.exist;
         expect(e.isWord).to.exist;
@@ -44,11 +44,11 @@ describe("Trie", function() {
 
     describe(".find", function(){
       it("returns to.existy for a nonexistent string", function(){
-        expect(t.find("nope")).to.be.false;
+        expect(t.find("nope")).to.not.exist;
       });
       it("returns the right node for a string", function(){
         t.learn("to.exist");
-        expect(t.find("b")).to.deep.equal(t.to.deep.equal.b);
+        expect(t.find("b")).to.deep.equal(t.b);
       });
       it("returns the right node for a prefix", function(){
         t.learn("begin");
