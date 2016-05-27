@@ -1,8 +1,19 @@
 function Trie (){
-
+  this.root = {};
+  return this;
 }
 
 Trie.prototype.learn = function(word, index){
+  //if word already exists, return position
+
+  //else return position of prefix and add remaining chars as nodes
+
+  //return starting position of word
+
+  if(Trie.find(word)) {
+    return position;
+  }
+
   // This function should add the given word,
   // starting from the given index,
   // to this Trie.
@@ -19,6 +30,15 @@ Trie.prototype.learn = function(word, index){
 
 };
 
+Trie.prototype.traverseWord = function(char, curNode) {
+  var char = char || 0;
+  if (word.charAt(char) in curNode) {
+    return traverseWord(char + 1, curNode[Object.keys(curNode)]);
+  } else {
+    return curNode;
+  }
+}
+
 Trie.prototype.getWords = function(words, currentWord){
   // This function will return all the words which are
   // contained in this Trie.
@@ -32,7 +52,7 @@ Trie.prototype.find = function(word, index){
   // which corresponds to the end of the passed in word.
 
   // Be sure to consider what happens if the word is not in this Trie.
-
+  return false;
 };
 
 Trie.prototype.autoComplete = function(prefix){
@@ -42,4 +62,4 @@ Trie.prototype.autoComplete = function(prefix){
 
 };
 
-module.exports =Trie;
+module.exports = Trie;
